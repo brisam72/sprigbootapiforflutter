@@ -3,6 +3,7 @@ package com.shush.mainPackge.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,6 +31,7 @@ public class AutorController {
 	}
 	
 	@GetMapping("getallauthor")
+	@CrossOrigin(origins = "http://localhost:8080")
 	public List<Author>getAllAuthor( @RequestBody Author author){
 		return repo.findAll();
 	}
