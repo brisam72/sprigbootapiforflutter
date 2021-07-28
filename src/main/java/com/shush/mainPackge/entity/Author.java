@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 
 @Entity
 public class Author {
@@ -12,6 +13,9 @@ public class Author {
 	private int id;
 	private String firstName;
 	private String lastName;
+	
+	@Lob
+	private byte[] image;
 	public Author() {
 		
 	}
@@ -32,6 +36,12 @@ public class Author {
 	}
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+	public byte[] getImage() {
+		return image;
+	}
+	public void setImage(byte[] image) {
+		this.image = image;
 	}
 	
 	
